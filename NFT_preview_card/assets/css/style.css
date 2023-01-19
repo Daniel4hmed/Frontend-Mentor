@@ -1,0 +1,162 @@
+:root {
+  /* Primary Colours */
+  --COLOR_SOFT-BLUE: hsl(215, 51%, 70%);
+  --COLOR_CYAN: hsl(178, 100%, 50%);
+
+  /* Neutral Colours */
+  --COLOR_WHITE: hsl(0, 0%, 100%);
+  --COLOR_DARK-NAVY: hsl(217, 54%, 11%);
+  --COLOR_NAVY: hsl(216, 50%, 16%);
+  --COLOR_LIGHT-NAVY: hsl(215, 32%, 27%);
+
+  /* Border */
+  --CARD_BORDER-RADIUS: 20px;
+  --NFT_IMAGE_BORDER-RADIUS: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--COLOR_DARK-NAVY);
+  color: var(--COLOR_SOFT-BLUE);
+  font-family: 'Outfit', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--COLOR_WHITE);
+}
+
+a:hover {
+  color: var(--COLOR_CYAN);
+}
+
+.card-container {
+  max-width: 350px;
+  padding: 3rem;
+  margin: 3rem;
+  border-radius: var(--CARD_BORDER-RADIUS);
+  background-color: var(--COLOR_NAVY);
+}
+
+/* Card Header */
+.card-header {
+  margin-bottom: 3rem;
+}
+
+.card-header a {
+  position: relative;
+  display: block;
+}
+
+.card-header a::before, 
+.card-header a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card-header a::before {
+  background-color: var(--COLOR_CYAN);
+  border-radius: var(--NFT_IMAGE_BORDER-RADIUS);
+}
+
+.card-header a::after {
+  background: url('../images/icon-view.svg') no-repeat center center;
+}
+
+.card-header a:hover::before {
+  opacity: 0.4;
+}
+
+.card-header a:hover::after {
+  opacity: 1;
+}
+
+.card-header img {
+  border-radius: var(--NFT_IMAGE_BORDER-RADIUS);
+}
+
+/* Card Body */
+.card-body h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.info-container, 
+.ethereum-container, 
+.time-container,
+.card-footer {
+  display: flex;
+  align-items: center;
+}
+
+.info-container {
+  justify-content: space-between;
+}
+
+.info-container svg {
+  margin-right: 0.5rem;
+}
+
+.ethereum-container p {
+  font-weight: bold;
+  color: var(--COLOR_CYAN);
+}
+
+/* Card Footer */
+.card-footer {
+  padding-top: 2rem;
+  border-top: 2px solid var(--COLOR_LIGHT-NAVY);
+  margin-top: 2rem;
+}
+
+.card-footer p {
+  font-size: 1.4rem;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  margin-right: 2rem;
+  border: 1px solid var(--COLOR_WHITE);
+  border-radius: 50%;
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+  .card-footer p {
+    font-size: 1.8rem;
+  }
+}
