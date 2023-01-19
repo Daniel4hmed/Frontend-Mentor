@@ -1,0 +1,63 @@
+@use '../abstract' as *;
+
+$card-width: 325px;
+$border-radius-size: 20px;
+
+.card {
+  max-width: $card-width;
+  background-color: #FFF;
+  @include border-radius($border-radius-size);
+
+  &__header {
+    img {
+      @include border-radius($border-radius-size);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__body {
+    padding: 2.5rem;
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2.3rem;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.6;
+      text-align: center;
+    }
+  }
+
+  &__plan {
+    @include flex-container();
+    justify-content: space-between;
+    padding: 1.5rem;
+    @include border-radius(10px);
+    margin: 2rem 0;
+    background-color: $pale-blue__light;
+
+    .plan-summary {
+      @include flex-container();
+      gap: 2rem;
+
+      .plan__title, .plan__price {
+        font-size: 1.5rem;
+      }
+    }
+
+    a {
+      color: $bright-blue;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: underline;
+
+      &:hover {
+        opacity: 0.7;
+        text-decoration: none;
+      }
+    }
+  }
+}

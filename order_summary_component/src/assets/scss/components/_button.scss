@@ -1,0 +1,39 @@
+@use '../abstract/' as *;
+
+$border-radius: 10px;
+
+%button {
+  display: inline-block;
+  width: 100%;
+  padding: 1.5rem;
+  @include border-radius($border-radius);
+  text-align: center;
+}
+
+.button {
+  @extend %button;
+
+  &:first-of-type {
+    margin-bottom: 1.5rem;
+  }
+
+  &__primary {
+    background-color: $bright-blue;
+    color: #FFF;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__cancel {
+    padding: 0;
+    border-radius: 0;
+    font-size: 1.4rem;
+    color: $desaturated-blue;
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+}
